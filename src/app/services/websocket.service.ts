@@ -23,6 +23,10 @@ export class WebsocketService {
     })
   }
 
+  emit (event:string, payload?:any, callback?: Function) {
+    this.socket.emit(event, payload, callback)
+  }
+
   getStatusSocket () {
     return this.isSocketConnected
   }
