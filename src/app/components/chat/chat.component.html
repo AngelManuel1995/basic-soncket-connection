@@ -1,13 +1,15 @@
 <p>Messages</p>
 <hr>
 
-<div class="container">
-  <div class="row" *ngFor="let message of messages" class="border">
-    <div class="col-md-7">
-      <p>{{ message.body }}</p>
-    </div>
-    <div class="col-md-3">
-      <p style="font-size: 0.7em;">from: <strong>{{ message.de }}</strong></p>
+<div class="container" style="color: white; background: gainsboro; height:400px; border: 1px solid gainsboro; overflow: scroll;">
+  <div class="row">
+    <div class="card bg-success" style="width: 96%; margin: auto; margin-top: 5px;" *ngFor="let message of messages">
+      <div class="col-md-7 col-lg-7">
+        <span>{{ message.body }}</span> 
+      </div>
+      <div class="col-md-4 col-lg-4">
+        <span style="font-size: 0.7em;">from: <strong>{{ message.de }}</strong></span>
+      </div>
     </div>
   </div>
 </div>

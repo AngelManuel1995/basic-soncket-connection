@@ -11,7 +11,7 @@ export class ChatService {
   }
 
   sendMessage(body) {
-    console.log('Emiting menssage')
+    // console.log('Emiting menssage')
     const payload = {
       de:'Angel Manuel Góez Giraldo',
       body
