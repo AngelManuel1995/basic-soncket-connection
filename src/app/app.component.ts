@@ -11,6 +11,6 @@ export class AppComponent implements OnInit {
   title = 'basico';
   constructor(public wsService: WebsocketService, public chatService:ChatService) {}
   ngOnInit () {
-    this.chatService.sendMessage('Hoola soy Angel Manuel Góez Giraldo')
+    // this.chatService.sendMessage('Hoola soy Angel Manuel Góez Giraldo')
   }
 }

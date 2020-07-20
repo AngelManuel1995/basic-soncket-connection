@@ -18,4 +18,8 @@ export class ChatService {
     }
     this.wsService.emit('message', payload)
   }
+
+  getMessage() {
+    return this.wsService.on('new-message')
+  }
 }

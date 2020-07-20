@@ -8,9 +8,14 @@ import { ChatService } from 'src/app/services/chat.service';
 })
 export class ChatComponent implements OnInit {
   public text: ''
+  public messages: Array<string> = []
   constructor( public chatService:ChatService ) { }
 
   ngOnInit(): void {
+    this.chatService.getMessage().subscribe((message:any) => {
+      console.log(message)
+      this.messages.push(message)
+    })
   }
 
   sendMessage(){
