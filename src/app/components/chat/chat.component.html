@@ -1,0 +1,11 @@
+<p>Messages</p>
+<hr>
+<form (ngSubmit)="sendMessage()">
+  <input 
+    type="text" 
+    autocomplete="off" 
+    class="form-control" 
+    placeholder="Ingrese un mensaje" 
+    name="text"
+    [(ngModel)]="text">
+</form>
