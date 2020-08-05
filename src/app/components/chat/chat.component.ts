@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ChatService } from 'src/app/services/chat.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-chat',
@@ -10,11 +11,12 @@ export class ChatComponent implements OnInit, OnDestroy {
   public text: ''
   public messages: Array<any> = []
   public messagesContainerElement: HTMLElement
+  public messagesSubcription: Subscription
   constructor( public chatService:ChatService ) { }
 
   ngOnInit(): void {
     this.messagesContainerElement = document.getElementById('chat-messages-container')
-    this.chatService.getMessage().subscribe((message:any) => {
+    this.messagesSubcription = this.chatService.getMessage().subscribe((message:any) => {
       this.messages.push(message)
       setTimeout(() => {
         this.messagesContainerElement.scrollTop = this.messagesContainerElement.scrollHeight
@@ -31,6 +33,6 @@ export class ChatComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(){
-    
+    this.messagesSubcription.unsubscribe()
   }
 }
